@@ -2,7 +2,7 @@ import tempfile
 from pyvis.network import Network
 import streamlit as st
 import streamlit.components.v1 as components
-from functions_for_pipeline import *
+from functions_for_pipeline import create_agent
 
 
 def create_network_graph(current_state):
@@ -232,7 +232,6 @@ def main():
         response = execute_plan_and_print_steps(inputs, plan_and_execute_app, placeholders, graph_placeholder, recursion_limit=45)
         st.write("Final Answer:")
         st.write(response)
-
 
 if __name__ == "__main__":
     main()
